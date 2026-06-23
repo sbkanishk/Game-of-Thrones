@@ -724,6 +724,11 @@ input { font: inherit; }
 }
 
 @media (max-width: 700px) {
+  :root {
+    --sidebar-w: 260px;
+    --topbar-h: 52px;
+  }
+  
   .sidebar {
     transform: translateX(-100%);
   }
@@ -737,16 +742,238 @@ input { font: inherit; }
     margin-left: 0;
     padding-top: var(--topbar-h);
   }
-  .hero { padding: 40px 24px 36px; gap: 32px; }
+  
+  /* Hero section */
+  .hero { 
+    padding: 32px 16px 28px;
+    gap: 20px;
+  }
+  .hero-eyebrow {
+    font-size: 10px;
+    margin-bottom: 12px;
+  }
+  .hero-title {
+    font-size: clamp(24px, 7vw, 36px);
+    margin-bottom: 14px;
+    line-height: 1.1;
+  }
+  .hero-sub {
+    font-size: 14px;
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+  .hero-hint {
+    font-size: 12px;
+  }
   .hero-sigils { grid-template-columns: repeat(4, 1fr); gap: 8px; }
   .sigil-btn { padding: 8px 4px; gap: 5px; }
   .sigil-btn svg { width: 28px; height: 28px; }
   .sigil-btn .sigil-name { font-size: 9px; }
-  .content-section { padding: 40px 24px; }
-  .person-card { width: 145px; }
-  .person-card.open { width: 200px; }
-  .kin-panel { bottom: 16px; right: 16px; left: 16px; max-width: none; }
-  .site-footer { padding: 32px 24px; }
+  
+  /* Content sections */
+  .content-section { 
+    padding: 32px 16px;
+  }
+  .section-head { margin-bottom: 28px; }
+  .section-eyebrow {
+    font-size: 10px;
+    margin-bottom: 8px;
+  }
+  .section-title {
+    font-size: clamp(18px, 6vw, 28px);
+    margin-bottom: 10px;
+  }
+  .section-sub {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  /* House meta */
+  .house-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .house-sigil-lg { width: 48px; height: 48px; }
+  .house-words {
+    font-size: 12px;
+  }
+  .house-seat {
+    font-size: 11px;
+  }
+  
+  /* Tree labels */
+  .tree-label {
+    font-size: 10px;
+    margin: 24px 0 12px;
+  }
+  
+  /* Generation / marriage */
+  .generation {
+    gap: 12px;
+    margin-bottom: 0;
+  }
+  .marriage-badge {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+  
+  /* Person cards */
+  .person-card { 
+    width: 140px;
+    padding: 14px 12px 12px;
+  }
+  .pc-sigil { width: 40px; height: 40px; margin-bottom: 8px; }
+  .pc-name {
+    font-size: 12px;
+  }
+  .pc-role {
+    font-size: 10px;
+    margin-top: 4px;
+  }
+  .pc-expand {
+    font-size: 8.5px;
+    margin-top: 8px;
+  }
+  .pc-bio {
+    font-size: 11.5px;
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+  .person-card.open { width: 190px; }
+  .pc-secret {
+    font-size: 8px;
+    padding: 1px 4px;
+  }
+  
+  /* Reveal callout */
+  .reveal-callout {
+    margin: 24px 0 0;
+    padding: 14px 16px;
+    font-size: 12.5px;
+    line-height: 1.6;
+  }
+  
+  /* Throne sequence */
+  .throne-sequence {
+    max-width: 100%;
+  }
+  .throne-step {
+    gap: 16px;
+  }
+  .ts-dot {
+    width: 36px;
+    height: 36px;
+    font-size: 12px;
+  }
+  .ts-name {
+    font-size: 15px;
+  }
+  .ts-note {
+    font-size: 12px;
+  }
+  .ts-body { padding: 6px 0 28px; }
+  
+  /* Glossary */
+  .gloss-category {
+    font-size: 16px;
+    margin: 32px 0 12px;
+    padding-bottom: 8px;
+  }
+  .gloss-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .gt-header { 
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .gt-term {
+    font-size: 14px;
+  }
+  .gt-plain {
+    font-size: 10px;
+    flex-basis: 100%;
+    margin-top: 2px;
+  }
+  .gt-meaning { font-size: 12.5px; }
+  .gt-context { font-size: 11.5px; }
+  .gt-expand { font-size: 8.5px; }
+  
+  /* Footer */
+  .site-footer { 
+    padding: 28px 16px;
+    font-size: 12px;
+  }
+  
+  /* Kinship panel */
+  .kin-panel { 
+    bottom: 12px; 
+    right: 12px; 
+    left: 12px; 
+    max-width: none;
+    padding: 12px 14px;
+    font-size: 12px;
+  }
+  .kin-panel-name { font-size: 13px; }
+  .kin-rel { font-size: 11px; }
+  .kin-panel-close { 
+    top: 8px; 
+    right: 10px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Extra small screens - optimize aggressively */
+  .hero {
+    padding: 24px 12px 20px;
+    gap: 16px;
+  }
+  .hero-title {
+    font-size: clamp(20px, 8vw, 28px);
+    margin-bottom: 10px;
+  }
+  .hero-sub {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+  
+  .content-section {
+    padding: 24px 12px;
+  }
+  .section-title {
+    font-size: clamp(16px, 5vw, 24px);
+  }
+  .section-sub {
+    font-size: 13px;
+  }
+  
+  .person-card {
+    width: 130px;
+    padding: 12px 10px;
+  }
+  .pc-name {
+    font-size: 11px;
+  }
+  .pc-bio {
+    font-size: 11px;
+  }
+  .person-card.open {
+    width: 180px;
+  }
+  
+  .gloss-grid {
+    grid-template-columns: 1fr;
+  }
+  .gt-term {
+    font-size: 13px;
+  }
+  
+  .site-footer {
+    padding: 20px 12px;
+    font-size: 11px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
